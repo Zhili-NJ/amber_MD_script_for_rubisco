@@ -1,0 +1,13 @@
+Stage 1 - first step minimisation with restraint
+ &cntrl
+  imin=1,
+  maxcyc=10000,
+  ncyc=2000,
+  igb= 0,
+  cut=12.,
+  ntb=1,
+  ntr=1,
+  ntpr=100,
+  restraint_wt=10.0,
+  restraintmask=':1-RESNUM',
+ /

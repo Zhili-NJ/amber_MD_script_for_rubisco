@@ -1,0 +1,6 @@
+Stage 2 - second step minimisation without restraint
+ &cntrl
+  imin=1, maxcyc=16000, ncyc=1000,
+ cut=12.,ntb=1,
+  ntpr=100
+ /

@@ -1,0 +1,18 @@
+source leaprc.gaff
+source leaprc.protein.ff19SB
+source leaprc.water.tip3p
+loadamberparams frcmod.ions234lm_1264_tip3p
+loadoff atomic_ions.lib
+loadamberparams rubpE1_resp.frcmod
+loadoff rubpE1_resp.lib
+loadamberparams KCXtest_gaff.frcmod
+loadamberparams KCXtestparm19.frcmod
+loadoff KCXtestdelete.lib
+complex1wdd = loadpdb NAME.pdb
+charge complex1wdd
+addIons complex1wdd K+ 0
+solvateOct complex1wdd TIP3PBOX 20.0
+addionsrand complex1wdd K+ 90 Cl- 90
+saveAmberParm complex1wdd NAME.parm7 NAME.rst7
+savepdb complex1wdd NAME_byleap.pdb
+quit

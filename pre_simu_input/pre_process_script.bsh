@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# define environmental variables
+
+name="1ckabp_1"
+resnum="4701"
+gpu_number=0
+
+sed -ie s/NAME/$name/g *.in
+sed -ie s/NAME/$name/g *.sh
+sed -ie s/RESNUM/$resnum/g *.in
+sed -ie s/GPU_NUMBER/$gpu_number/g *.sh
+
+rm *.she
+rm *.ine
+
+parmed -i parmed_input.in -p *.parm7 > parmed.log
