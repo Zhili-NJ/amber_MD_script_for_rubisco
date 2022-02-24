@@ -1,0 +1,16 @@
+parm *_HMR.parm7
+trajin *.nc
+autoimage
+center :1-4701 origin
+image origin center
+strip :WAT
+strip :K+
+strip :Cl-
+#strip :1177-4704
+#strip :1052-1173
+#strip :466-587
+autoimage
+trajout *_strip.nc
+run
+exit
+
