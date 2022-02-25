@@ -34,7 +34,7 @@ cp $i* \$PBS_O_WORKDIR
 cp *rst7 \$PBS_O_WORKDIR
 cd \$PBS_O_WORKDIR
 
-./gamd_run.sh $((i+1)) 
+./repeat_run.sh $((i+1)) 
 
 EOF
 
