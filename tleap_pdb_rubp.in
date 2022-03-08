@@ -1,0 +1,66 @@
+source leaprc.gaff
+source leaprc.protein.ff19SB
+source leaprc.water.tip3p
+loadamberparams frcmod.ions234lm_1264_tip3p
+loadoff atomic_ions.lib
+loadamberparams rubpE1_resp.frcmod
+loadoff rubpE1_resp.lib
+loadamberparams KCXtest_gaff.frcmod
+loadamberparams KCXtestparm19.frcmod
+loadoff KCXtestdelete.lib
+L1 = loadpdb L1.pdb
+L2 = loadpdb L2.pdb
+L3 = loadpdb L3.pdb
+L4 = loadpdb L4.pdb
+L5 = loadpdb L5.pdb
+L6 = loadpdb L6.pdb
+L7 = loadpdb L7.pdb
+L8 = loadpdb L8.pdb
+S1 = loadpdb S1.pdb
+S2 = loadpdb S2.pdb
+S3 = loadpdb S3.pdb
+S4 = loadpdb S4.pdb
+S5 = loadpdb S5.pdb
+S6 = loadpdb S6.pdb
+S7 = loadpdb S7.pdb
+S8 = loadpdb S8.pdb
+metals = loadpdb mg.pdb
+ligands = loadpdb ligand_rubp_1.pdb
+water = loadpdb water.pdb
+1wdd = combine {L1 L2 L3 L4 L5 L6 L7 L8 S1 S2 S3 S4 S5 S6 S7 S8 metals ligands water}
+bond 1wdd.247.SG 1wdd.724.SG
+bond 1wdd.1201.SG 1wdd.1678.SG
+bond 1wdd.2155.SG 1wdd.2632.SG
+bond 1wdd.3109.SG 1wdd.3586.SG
+bond 1wdd.172.SG 1wdd.192.SG
+bond 1wdd.649.SG 1wdd.669.SG
+bond 1wdd.1126.SG 1wdd.1146.SG
+bond 1wdd.1603.SG 1wdd.1623.SG
+bond 1wdd.2080.SG 1wdd.2100.SG
+bond 1wdd.2557.SG 1wdd.2577.SG
+bond 1wdd.3034.SG 1wdd.3054.SG
+bond 1wdd.3511.SG 1wdd.3531.SG
+bond 1wdd.449.SG 1wdd.459.SG
+bond 1wdd.926.SG 1wdd.936.SG
+bond 1wdd.1403.SG 1wdd.1413.SG
+bond 1wdd.1880.SG 1wdd.1890.SG
+bond 1wdd.2357.SG 1wdd.2367.SG
+bond 1wdd.2834.SG 1wdd.2844.SG
+bond 1wdd.3311.SG 1wdd.3321.SG
+bond 1wdd.3788.SG 1wdd.3798.SG
+bond 1wdd.189.SG 1wdd.221.SG
+bond 1wdd.666.SG 1wdd.698.SG
+bond 1wdd.1143.SG 1wdd.1175.SG
+bond 1wdd.1620.SG 1wdd.1652.SG
+bond 1wdd.2097.SG 1wdd.2129.SG
+bond 1wdd.2574.SG 1wdd.2606.SG
+bond 1wdd.3051.SG 1wdd.3083.SG
+bond 1wdd.3528.SG 1wdd.3560.SG
+#check 1wdd
+charge 1wdd
+addIons 1wdd K+ 0
+solvateOct 1wdd TIP3PBOX 20.0
+addionsrand 1wdd K+ 90 Cl- 90
+saveAmberParm 1wdd 8rubp_1.parm7 8rubp_1.rst7
+savepdb 1wdd 8rubp_1.pdb
+quit
