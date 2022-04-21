@@ -1,7 +1,9 @@
 #!/bin/bash
+#use directory name to distinguish the running systems
+#CUDA_VISIBLE_DEVICES="0" need to be specifie
 #usage: chmod 755 repeat_gpu.sh
 #nohup ./repeat_gpu.sh 1 &
-#
+
 i=$1
 
 if [ $i == 1 ]
