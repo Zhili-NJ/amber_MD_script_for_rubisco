@@ -1,0 +1,21 @@
+#PBS -lselect=1:ncpus=4:mem=48gb
+#PBS -lwalltime=24:00:00
+
+cd $PBS_O_WORKDIR
+
+cat << EOF > contact.in
+parm *.parm7
+trajin *.nc 751 last 4
+rms fit :1-4856
+average avg.pdb pdb
+go
+reference avg.pdb
+nativecontacts name 8rubp :1-4856&!@H= byresidue map mapout dist_all_3.out
+run
+exit
+ 
+EOF
+
+cpptraj -i contact.in   
+
+
