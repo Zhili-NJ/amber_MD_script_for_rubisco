@@ -11,3 +11,6 @@ However, even above we say the irreproducibility, the stochasticity of the MD si
 Moreover, a common strategy doing MD repeats is to set the random velocity of the atoms of the equilibrated structures to produce multiple trajectories. 
  ## Acceleration tech
 Furthermore, as long as the force field is trustable, the acceleration techniques like GaMD, accelerate the traverse of the conformation space and lift the trapped conformations caused the deviation and random seed velocity... 
+
+
+note from：http://sobereva.com/88   respect sob
